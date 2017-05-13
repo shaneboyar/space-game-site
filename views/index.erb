@@ -1,0 +1,6 @@
+<h1>High Scores!</h1>
+<ol>
+  <% scores.each do |score| %>
+    <li><%= score.score %> (<%= score.name %> on <%= score.date %>)</li>
+  <% end %>
+</ol>
