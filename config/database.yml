@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: development
+  username: shaneboyar
+  password: Humb3rthumb3rt
+  host: localhost

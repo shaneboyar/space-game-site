@@ -1,13 +1,15 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require './config/environments' #database configuration
 require './score'
-
-$scores = Array.new
+require './models/model'
 
 get '/' do
-  erb :index, locals: {scores: $scores}
+  erb :index, locals: {scores: Model.all}
 end
 
 post '/' do
-  $scores << Score.new(params['name'], params['score'], params['date'])
+  @model = Model.new({name: params['name'], score: params['score'], date: params['date']})
+  @model.save
   true
 end
